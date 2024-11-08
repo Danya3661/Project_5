@@ -1,0 +1,113 @@
+.across {
+	background: linear-gradient(95deg, #ffb629 -1.19%, #ffda56 57.78%, #ffd7a6 115.08%);
+	overflow: visible;
+	
+
+	@include bp($point_2, min) {
+		height: 40rem;
+	}
+
+	@include bp($point_3) {
+		min-height: 40rem;
+	}
+}
+.across__in {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+	@include bp($point_2, min) {
+		position: relative;
+		top: -45rem;
+	}
+}
+.across__title {
+	margin-bottom: 3.4rem;
+
+	@include bp($point_3) {
+		text-align: center;
+	}
+}
+.across_list {
+	width: 100%;
+	display: flex;
+
+	@include bp($point_2, min) {
+		flex-wrap: wrap;
+		column-gap: 1.8rem;
+		margin-bottom: 6.4rem;
+	}
+
+	@include bp($point_3) {
+		flex-direction: column;
+		align-items: center;
+		row-gap: 2rem;
+		margin-bottom: 3.2rem;
+	}
+}
+.across__item {
+	position: relative;
+	width: calc((100% - 7.2rem) / 5);
+	min-height: 40rem;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	cursor: pointer;
+
+	@include bp($point_2, min) {
+		width: calc((100% - 7.2rem) / 5);
+		min-height: 40rem;
+	}
+
+	@include bp($point_3) {
+		width: 32rem;
+		height: 100%;
+	}
+
+	&.across__item.across__item--bg1 {
+		background-image: url(../imgs/across/across_1.jpg);
+	}
+	&.across__item.across__item--bg2 {
+		background-image: url(../imgs/across/across_2.jpg);
+	}
+	&.across__item.across__item--bg3 {
+		background-image: url(../imgs/across/across_3.jpg);
+	}
+	&.across__item.across__item--bg4 {
+		background-image: url(../imgs/across/across_4.jpg);
+	}
+	&.across__item.across__item--bg5 {
+		background-image: url(../imgs/across/across_5.jpg);
+	}
+}
+.across__item_w_in {
+	display: flex;
+	flex-direction: column;
+	row-gap: 0.4rem;
+	padding-left: 2.4rem;
+	padding-bottom: 2rem;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.across__item_title {
+	font-family: $font_2;
+	font-size: 2rem;
+	line-height: 2.4rem;
+	color: $color_white;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+.across__item_descr {
+	font-family: $font_1;
+	font-size: 1.6rem;
+	line-height: 2.4rem;
+	color: #ffb629;
+}
+.across__btn {
+	@extend%main__btn_w_2;
+	@extend%main__btn_color_2;
+	@extend%main__btn_font;
+}

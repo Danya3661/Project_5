@@ -1,0 +1,129 @@
+.company{
+	padding-top: 0;
+}
+
+.company__in {
+	width: 100%;
+	display: flex;
+	align-items: center;
+
+	@include bp($point_2, min) {
+		justify-content: space-between;
+		column-gap: 5rem;
+	}
+
+	@include bp($point_3) {
+		flex-direction: column;
+		row-gap: 2rem;
+	}
+}
+.company__coll {
+	&.company__coll.company__coll--1 {
+		position: relative;
+
+		@include bp($point_2, min) {
+			width: 72.6rem;
+		}
+
+		@include bp($point_3) {
+			width: 100%;
+		}
+	}
+	&.company__coll.company__coll--2 {
+		display: flex;
+		flex-direction: column;
+
+		@include bp($point_2, min) {
+			width: 60.4rem;
+		}
+		@include bp($point_3) {
+			width: 100%;
+		}
+	}
+}
+.company__img_w1 {
+	display: block;
+	object-fit: cover;
+
+	@include bp($point_2, min) {
+		width: 72.6rem;
+		height: 48.6rem;
+	}
+
+	@include bp($point_3) {
+		width: 100%;
+		height: 100%;
+	}
+}
+.company__img_w2 {
+	
+	display: block;
+	object-fit: cover;
+	border-top: 3rem solid $color_white;
+	border-left: 3rem solid $color_white;
+	position: absolute;
+	bottom: -4rem;
+	
+	
+	@include bp($point_2, min) {
+		width: 24rem;
+		height: 23.2rem;
+		right: -3.4rem;
+	}
+	
+	@include bp($point_3) {
+		width: 12rem;
+		height: 12rem;
+		right: -1.4rem;
+	}
+	
+	
+}
+.company__img {
+	@extend %cover_image;
+}
+.company__subtitle_w {
+	max-width: 8.6rem;
+	margin-bottom: 1.4rem;
+}
+.company__title {
+	margin-bottom: 1.2rem;
+}
+.company__descr {
+	margin-bottom: 2rem;
+}
+.button_list {
+	display: flex;
+	align-items: center;
+	column-gap: 1.4rem;
+	margin-bottom: 2.6rem;
+}
+.button__tub {
+	@extend%main__btn_w_1_2;
+	@extend%main__btn_color_3;
+	@extend%main__btn_font;
+	&.active {
+		background-color: $color_gold;
+		color: $color_white;
+	}
+}
+.tub__descr {
+	display: none;
+	&.tub__descr.tub__descr--weigt1 {
+		font-weight: 600;
+		color: green;
+	}
+	&.tub__descr.tub__descr--weigt2 {
+		font-weight: 800;
+		color: red;
+	}
+	&.active {
+		display: block;
+		margin-bottom: 3.4rem;
+	}
+}
+.company__btn {
+	@extend%main__btn_w_2;
+	@extend%main__btn_color_2;
+	@extend%main__btn_font;
+}

@@ -1,0 +1,180 @@
+.ask {
+	background-color: $color_white_2;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+.ask__in {
+	width: 100%;
+	display: flex;
+	align-items: center;
+
+	@include bp($point_2, min) {
+		justify-content: space-between;
+		column-gap: 5rem;
+		margin: 0;
+		padding: 0;
+	}
+
+	@include bp($point_3) {
+		flex-direction: column;
+		row-gap: 2rem;
+	}
+}
+.ask__coll {
+	@include bp($point_2, min) {
+		width: 68.2rem;
+	}
+
+	@include bp($point_3) {
+		width: 100%;
+	}
+
+	&.ask__coll.ask__coll--1 {
+		display: flex;
+		row-gap: 5rem;
+		flex-direction: column;
+	}
+	&.ask__coll.ask__coll--2 {
+		position: relative;
+	}
+}
+.ask__info {
+	width: 30.8rem;
+	display: flex;
+	flex-direction: column;
+	row-gap: 1.4rem;
+
+	@include bp($point_3) {
+		align-items: center;
+		text-align: center;
+	}
+}
+.ask__subtitle_w {
+	max-width: 5rem;
+}
+.ask_accordion {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.ask_accordion__list {
+	width: 100%;
+	display: flex;
+
+	flex-direction: column;
+
+	@include bp($point_2, min) {
+		row-gap: 4.4rem;
+	}
+
+	@include bp($point_3) {
+		row-gap: 2.2rem;
+	}
+}
+.ask_accordion__item {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.ask_accordion__title_w {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	column-gap: 5rem;
+	justify-content: space-between;
+	cursor: pointer;
+}
+.ask_accordion__title {
+	font-family: $font_2;
+	font-size: 2rem;
+	font-weight: 400;
+	line-height: 2.2rem;
+	color: $color_blue_2;
+}
+.accordion__img_w {
+	width: 0.8rem;
+	height: 1.6rem;
+	display: block;
+	object-fit: contain;
+}
+.accordion__img {
+	@extend %contain_image;
+}
+.ask_accordion__content {
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	height: 0;
+}
+.ask_accordion__title_w.active + .ask_accordion__content {
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+	height: auto;
+	transition: all 0.3s ease-in-out;
+}
+.ask_accordion__title_w.active {
+	margin-bottom: 1.8rem;
+	.accordion__img_w {
+		transform: rotate(90deg);
+	}
+}
+.ask__img_w {
+	display: block;
+	object-fit: contain;
+
+	@include bp($point_2, min) {
+		width: 68.2rem;
+		height: 54rem;
+	}
+
+	@include bp($point_3) {
+		display: none;
+	}
+}
+.ask__img {
+	@extend %contain_image;
+}
+.talk__info {
+
+	display: flex;
+	flex-direction: column;
+	background-color: $color_blue;
+
+	padding: 5.2rem;
+
+	@include bp($point_2, min) {
+		position: absolute;
+		max-width: 44rem;
+		top: 8.6rem;
+		left: -12.6rem;
+	}
+
+	@include bp($point_3) {
+		max-width: 100%;
+	}
+}
+.talk__subtitle_w {
+	max-width: 9rem;
+	margin-bottom: 2.2rem;
+}
+.talk__title {
+	font-family: $font_2;
+	font-size: 2rem;
+	line-height: 2.2rem;
+	color: $color_white;
+	margin-bottom: 2rem;
+}
+.talk_cont__item {
+	display: flex;
+	align-items: center;
+	column-gap: 1.4rem;
+	margin-bottom: 2.6rem;
+}
+.talk__btn {
+	@extend%main__btn_w_1_1;
+	@extend%main__btn_color_1;
+	@extend%main__btn_font;
+}

@@ -1,0 +1,33 @@
+.car {
+	background-image: url(../imgs/car/car.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	height: 49rem;
+	z-index: 5;
+	top: -8rem;
+	left: 0;
+	padding: 0;
+}
+.car__bg {
+	background: linear-gradient(90.93deg, #032d5f 18.18%, rgba(9, 18, 66, 0.2) 64.92%);
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+	align-items: center;
+	
+}
+.car__in {
+	width: 100%;
+}
+.car__info {
+	max-width: 59.2rem;
+	display: flex;
+	flex-direction: column;
+	row-gap: 0.8rem;
+}
+.car__subtitle_w {
+	max-width: 8.6rem;
+}

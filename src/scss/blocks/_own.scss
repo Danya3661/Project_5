@@ -1,0 +1,81 @@
+.own {
+	min-height: 15.6rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+	
+	@include bp($point_2, min) {
+		padding: 0;
+	}
+	
+	@include bp($point_3) {
+	padding-top: 0;
+	}
+	
+}
+.own__in {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	@include bp($point_2, min) {
+		padding: 0;
+	}
+}
+.own__list {
+	width: 100%;
+	display: flex;
+
+	@include bp($point_2, min) {
+		flex-wrap: wrap;
+	}
+
+	@include bp($point_3) {
+		flex-direction: column;
+		align-items: center;
+		row-gap: 2rem;
+	}
+}
+.own__item {
+	display: flex;
+	align-items: center;
+
+	column-gap: 1rem;
+	border-right: 1px solid #d4d4d4;
+
+	@include bp($point_2, min) {
+		justify-content: center;
+		width: calc(100% / 4);
+		padding: 5rem 0;
+		&:last-child {
+			border-right: 0;
+		}
+	}
+
+	@include bp($point_3) {
+		width: 100%;
+	}
+
+	
+	span {
+		width: 1.6rem;
+		height: 1.6rem;
+		background: linear-gradient(94.06deg, #ffb629 -1.21%, #ffda56 58.66%, #ffd7a6 116.84%);
+	}
+}
+.own__figure {
+	font-family: $font_2;
+	font-size: 5rem;
+	font-weight: 600;
+	line-height: 6rem;
+	color: $color_blue_2;
+}
+.own__descr {
+	font-family: $font_3;
+	font-size: 2rem;
+	font-weight: 400;
+	line-height: 1.8rem;
+	color: $color_blue_2;
+}

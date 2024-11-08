@@ -1,0 +1,76 @@
+.services {
+	background-color: $color_white_2;
+}
+.services__in {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	row-gap: 5.4rem;
+}
+.services__info {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+	row-gap: 1.4rem;
+}
+.services__list {
+	width: 100%;
+	display: flex;
+
+	@include bp($point_2, min) {
+		flex-wrap: wrap;
+		column-gap: 16rem;
+		row-gap: 5.2rem;
+	}
+
+	@include bp($point_3) {
+		flex-direction: column;
+		align-items: center;
+		row-gap: 2rem;
+	}
+}
+.services__item {
+	display: flex;
+	flex-direction: column;
+
+	@include bp($point_2, min) {
+		width: calc((100% - 32rem) / 3);
+	}
+	@include bp($point_3) {
+		width: 100%;
+		align-items: center;
+		text-align: center;
+	}
+}
+.services__img_w {
+	display: block;
+	object-fit: contain;
+	width: 5rem;
+	height: 5rem;
+	margin-bottom: 2.4rem;
+}
+.services__img {
+	@extend %contain_image;
+}
+.services__item_title {
+	font-family: $font_2;
+	font-size: 2.4rem;
+	font-weight: 400;
+	line-height: 2.8rem;
+	color: $color_blue_2;
+	margin-bottom: 1.2rem;
+	cursor: pointer;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+.services__btn {
+	@extend%main__btn_w_2;
+	@extend%main__btn_color_2;
+	@extend%main__btn_font;
+}

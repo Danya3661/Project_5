@@ -1,0 +1,44 @@
+.hero {
+	background-image: url(../imgs/hero/hero_bg.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	top: -8rem;
+	left: 0;
+	padding: 20rem 0;
+
+	@include bp($point_2, min) {
+		background-attachment: fixed;
+	}
+
+	@include bp($point_3) {
+		background-attachment: local;
+	}
+}
+.hero__in {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+.hero_info {
+	max-width: 57.2rem;
+	display: flex;
+	flex-direction: column;
+}
+.hero__subtitle_w {
+	max-width: 26.2rem;
+	margin-bottom: 0.8rem;
+}
+.hero__title {
+	margin-bottom: 0.6rem;
+}
+.hero__descr {
+	color: $color_white;
+	margin-bottom: 2.4rem;
+}
+.hero__btn {
+	@extend%main__btn_w_1;
+	@extend%main__btn_color_1;
+	@extend%main__btn_font;
+}

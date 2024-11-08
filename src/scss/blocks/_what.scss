@@ -1,0 +1,100 @@
+.what__in {
+	width: 100%;
+	display: flex;
+
+	@include bp($point_2, min) {
+		justify-content: center;
+		column-gap: 3rem;
+	}
+
+	@include bp($point_3) {
+		flex-direction: column;
+		align-items: center;
+		row-gap: 3rem;
+	}
+}
+.what__coll {
+	&.what__coll.what__coll--one {
+		display: flex;
+		flex-direction: column;
+		row-gap: 1.4rem;
+
+		@include bp($point_2, min) {
+			max-width: 30rem;
+		}
+
+		@include bp($point_3) {
+			max-width: 100%;
+			align-items: center;
+			text-align: center;
+		}
+	}
+	&.what__coll.what__coll--two {
+		@include bp($point_2, min) {
+			max-width: 83rem;
+		}
+
+		@include bp($point_3) {
+			max-width: 100%;
+		}
+	}
+}
+.what__subtitle_w {
+	max-width: 10rem;
+}
+.what_list {
+	width: 100%;
+	display: flex;
+
+	@include bp($point_2, min) {
+		flex-wrap: wrap;
+		column-gap: 7.4rem;
+		row-gap: 7rem;
+	}
+
+	@include bp($point_3) {
+		flex-direction: column;
+		align-items: center;
+		row-gap: 2rem;
+	}
+}
+.what_list__item {
+	display: flex;
+	justify-content: center;
+	column-gap: 1.6rem;
+
+	@include bp($point_2, min) {
+		width: calc((100% - 7.6rem) / 2);
+	}
+
+	@include bp($point_3) {
+		width: 100%;
+		align-items: center;
+	}
+}
+.what__img_w {
+	width: 7rem;
+	height: 7rem;
+	object-fit: contain;
+	display: block;
+}
+.what__img {
+	@extend %contain_image;
+}
+.what__descr_w {
+	display: flex;
+	flex-direction: column;
+	row-gap: 1.2rem;
+	padding-left: 2.4rem;
+	border-left: 1px solid #d8d8d8;
+}
+.what_descr__title {
+	font-family: $font_2;
+	font-size: 2.4rem;
+	line-height: 2.8rem;
+	color: $color_blue_2;
+	cursor: pointer;
+	&:hover {
+		text-decoration: underline;
+	}
+}

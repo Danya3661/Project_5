@@ -1,0 +1,340 @@
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	z-index: 9;
+}
+.header_top {
+	width: 100%;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: $color_blue;
+
+	@include bp($point_2, min) {
+		min-height: 16rem;
+	}
+
+	@include bp($point_3) {
+		min-height: 10rem;
+	}
+}
+.burger {
+	@include bp($point_2, min) {
+		display: none;
+	}
+
+	@include bp($point_3) {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		z-index: 999;
+		width: 5rem;
+		height: 5rem;
+		background-image: url(../imgs/header/burger.svg);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+}
+.header_top__in {
+	width: 100%;
+	display: flex;
+	align-items: center;
+
+	@include bp($point_2, min) {
+		justify-content: space-between;
+	}
+
+	@include bp($point_3) {
+		justify-content: center;
+	}
+}
+.header__logo_w {
+	width: 21rem;
+	height: 3.6rem;
+	display: block;
+	object-fit: contain;
+}
+.header__logo {
+	@extend %contain_image;
+}
+.header__cont_list {
+	@include bp($point_2, min) {
+		display: flex;
+		align-items: center;
+		column-gap: 4rem;
+	}
+
+	@include bp($point_3) {
+		display: none;
+	}
+}
+.header_cont__item {
+	display: flex;
+	align-items: center;
+	column-gap: 1.6rem;
+}
+.header__img_w {
+	width: 6.2rem;
+	height: 6.2rem;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	object-fit: contain;
+	border: 1px solid $color_blue_3;
+	border-radius: 50%;
+	background-color: $color_blue_4;
+
+	&:hover {
+		.header__img {
+			transform: scale(1.2, 1.2);
+		}
+	}
+}
+.header__img {
+	display: block;
+	object-fit: contain;
+	width: 2.2rem;
+	height: 2.2rem;
+	transition: all 0.5s ease-in-out;
+}
+.header_cont__descr {
+	font-family: $font_1;
+	font-size: 1.4rem;
+	line-height: 1.9rem;
+	text-decoration: none;
+	color: $color_white;
+	transition: all 0.5s ease-in-out;
+	&:hover {
+		color: $color_gold;
+	}
+}
+.header_bottom {
+	width: 100%;
+	min-height: 7.8rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #09124240;
+}
+.header_bottom__in {
+	width: 100%;
+
+	display: flex;
+	align-items: center;
+
+	@include bp($point_2, min) {
+		justify-content: space-between;
+	}
+
+	@include bp($point_3) {
+		justify-content: center;
+	}
+}
+.header__menu {
+	@include bp($point_3) {
+		display: none;
+		position: fixed;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 998;
+		top: 0;
+		left: 0;
+		width: 100dvw;
+		height: 100dvh;
+		transform: translateX(-100%);
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		transition: all 0.3s ease-in-out;
+		overflow: auto;
+		background: linear-gradient(94.06deg, #ffb629 -1.21%, #ffda56 58.66%, #ffd7a6 116.84%);
+	}
+}
+.header__menu.active {
+	@include bp($point_3) {
+		transform: translateX(0);
+		visibility: visible;
+		pointer-events: auto;
+		opacity: 1;
+	}
+}
+.header__bottom_list {
+	display: flex;
+	align-items: center;
+
+	height: 7.8rem;
+
+	@include bp($point_2, min) {
+		column-gap: 3rem;
+	}
+
+	@include bp($point_3) {
+		flex-direction: column;
+		row-gap: 4rem;
+	}
+}
+.header_bottom__item_w {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	position: relative;
+
+	&.header_bottom__item_w.header_bottom__item_w--arrow {
+		// position: relative;
+
+		@include bp($point_2, min) {
+			&::before {
+				position: absolute;
+				transform: translate(-50%, -50%);
+				top: 50%;
+				left: 70%;
+				content: '';
+				width: 0.8rem;
+				height: 0.4rem;
+				background-image: url(../imgs/header/arrow.svg);
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+
+				transition: all 0.5s ease-in-out;
+			}
+			&:hover {
+				&::before {
+					transform: rotate(180deg);
+				}
+			}
+		}
+
+		@include bp($point_3) {
+			&::before {
+				display: none;
+			}
+		}
+	}
+
+	@include bp($point_2, min) {
+		&::after {
+			position: absolute;
+			content: '';
+			width: 0;
+			height: 0;
+			background-color: $color_white;
+			transform: translate(-50%, -50%);
+			top: 100%;
+			left: 30%;
+			transition: all 0.5s ease-in-out;
+		}
+		&:hover,
+		&:focus {
+			&.header_bottom__item_w::after {
+				width: 5.2rem;
+				height: 0.2rem;
+			}
+		}
+	}
+}
+
+.header_bottom__item {
+	font-family: $font_1;
+	font-size: 1.6rem;
+	font-weight: 600;
+	line-height: 2.2rem;
+
+	text-decoration: none;
+
+	// &.header_bottom__item.header_bottom__item--arrow {
+	// 	position: relative;
+	// 	&::after {
+	// 		position: absolute;
+	// 		transform: translate(-50%, -50%);
+	// 		top: 50%;
+	// 		left: 70%;
+	// 		content: '';
+	// 		width: 0.8rem;
+	// 		height: 0.4rem;
+	// 		background-image: url(../imgs/header/arrow.svg);
+	// 		background-position: center;
+	// 		background-repeat: no-repeat;
+	// 		background-size: cover;
+
+	// 		transition: all 0.5s ease-in-out;
+	// 	}
+	// 	&:hover{
+	// 		&::after{
+	// 			transform: rotate(180deg);
+	// 		}
+	// 	}
+	// }
+
+	@include bp($point_2, min) {
+		color: $color_white;
+		padding-right: 4rem;
+		border-right: 1px solid #ffffff33;
+	}
+
+	@include bp($point_3) {
+		color: $color_blue;
+	}
+}
+.header_socials {
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+.socials {
+	display: flex;
+	align-items: center;
+	column-gap: 2.4rem;
+
+	@include bp($point_2, min) {
+		padding-right: 5rem;
+	}
+}
+.socials__link {
+	display: block;
+	object-fit: contain;
+	width: 2rem;
+	height: 2rem;
+	color: $color_white;
+	transition: all 0.5s ease-in-out;
+	&:hover {
+		color: $color_gold;
+		transform: scale(1.1, 1.1);
+	}
+}
+.social__icon {
+	@extend %contain_image;
+}
+.header_bottom__btn {
+	@include bp($point_2, min) {
+		max-width: 21.6rem;
+		height: 7.8rem;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0 5.2rem;
+		background-color: $color_white;
+		color: #23212a;
+		text-decoration: none;
+		font-family: $font_1;
+		font-size: 1.6rem;
+		font-weight: 600;
+		line-height: 7.8rem;
+		text-align: center;
+		transition: all 0.5s ease-in-out;
+		&:hover {
+			background-color: $color_gold;
+		}
+	}
+
+	@include bp($point_3) {
+		display: none;
+	}
+}
